@@ -21,7 +21,7 @@ class DisplayData extends Component {
         const endDate = this.props.endDate === '' ? Number.MAX_SAFE_INTEGER.toString() : this.props.endDate;
         const objDate = (obj.date.split('-').join(''));
 
-        if (objDate > startDate && objDate < endDate) {
+        if (objDate >= startDate && objDate <= endDate) {
           returnedObj = (
             <tbody key={key}>
               <tr>
