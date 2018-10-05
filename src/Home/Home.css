@@ -1,0 +1,64 @@
+.home {
+	width: 80vw;
+	margin: 0 10vw;
+}
+
+/*
+  Individual buttons need to declare background and txt color
+*/
+.btn {
+	display: inline-block;
+	text-align: center;
+	width: 150px;
+	padding: 10px 15px;
+	margin: 10px 15px;
+	border: 1px solid black;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.category-selector {
+	background-color: rgba(0,0,0,.7);
+	color: white;
+}
+
+.category-selector:hover {
+	background-color: rgba(0,0,0,.6);
+}
+
+.category-selector:active {
+	background-color: rgba(0,0,0,.45);
+}
+
+.category-selector:visited {
+	background-color: rgba(0,0,0,.15);
+}
+
+.selected {
+	background-color: rgba(247, 247, 101, 1);
+	color: black;
+	border: 1px solid gray;
+}
+
+.selected:hover {
+	background-color: rgba(247, 247, 101, .85);
+}
+
+.selected:active {
+	background-color: rgba(247, 247, 101, .5);
+}
+
+.master-filter-container {
+	text-align: center;
+}
+
+.category-selector-container {	
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.categories-container {
+	display: flex;
+	overflow-y: auto
+}

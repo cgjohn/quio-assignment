@@ -1,0 +1,21 @@
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+	text-align: center;
+	padding: 5px 10px;
+}
+
+label {
+	margin-right: 5px;
+}
+
+.display-container {
+	margin: 0 15px;
+}
+
+.date-input {
+	margin: 5px 0 10px 0;
+}
