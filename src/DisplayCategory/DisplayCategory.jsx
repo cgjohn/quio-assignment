@@ -7,8 +7,8 @@ import DisplayData from './DisplayData/DisplayData'
 class DisplayCategory extends Component {
   state = {
   	data: null,
-  	startDate: (""),
-  	endDate: (""),
+  	startDate: "",
+  	endDate: "",
   	fetchedData: false,
     fetchError: ""
   } 
@@ -20,8 +20,11 @@ class DisplayCategory extends Component {
       endDate: this.props.endDate
     })
   	const url = `http://assignment.quio.com/${this.props.name}`
-
-  	fetch(url)
+    /*
+      the cors-anywhere link is to allow an https site to talk to an http endpoint
+      was also used for the initial CORS issue with the endpoint
+    */
+  	fetch('https://cors-anywhere.herokuapp.com/' + url)
 	  .then(response => response.json())
 	  .then(json => this.setState({
 	  	data: json,
@@ -32,7 +35,12 @@ class DisplayCategory extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    // allows component to update when parent's dates change
+    /*
+     - allows component to update when parent's dates change
+     - Not a good practice to have two sources of truth but
+       without a state management system I felt this was a
+       a valid approach to acheiving the desired experience
+    */
     if(this.props !== prevProps){
       this.setState({
         startDate: this.props.startDate,
